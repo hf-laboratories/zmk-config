@@ -17,6 +17,18 @@
 #     artifact-name: corne_left_with_studio
 #
 ---
+name: Build Corne Wireless
+on: [push, workflow_dispatch]
+
+jobs:
+  build:
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    with:
+      shield: "corne_left corne_right"
+      board: "nice_nano_v2"
+      artifact-name:cornesplit-a1
+
+
 include:
   - board: nice_nano_v2
     shield: corne_left
@@ -25,8 +37,8 @@ include:
   - board: nice_nano_v2
     shield: corne_left
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=y
-    artifact-name: corne_left-zmk
+    artifact-name: corne_left-zmk-a2
   - board: nice_nano_v2
     shield: corne_right
     cmake-args: -DCONFIG_ZMK_SPLIT=y -DCONFIG_ZMK_SPLIT_ROLE_CENTRAL=n
-    artifact-name: corne_right-zmk
+    artifact-name: corne_right-zmk-a2
