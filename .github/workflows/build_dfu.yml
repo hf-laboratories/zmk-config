@@ -11,15 +11,12 @@ jobs:
     strategy:
       matrix:
         include:
-          # - board: nice_nano_v2
-          #   shield: corne_left
-          #   artifact-name: corne_left
-          # - board: nice_nano_v2
-          #   shield: corne_right
-          #   artifact-name: corne_right
-          - board: raytac_mdbt50q_cx_40
-            shield: corne_dongle
-            artifact-name: corne_dongle
+          - board: nice_nano_v2
+            shield: corne_left
+            artifact-name: corne_left
+          - board: nice_nano_v2
+            shield: corne_right
+            artifact-name: corne_right
     steps:
       - uses: actions/checkout@v3
 
